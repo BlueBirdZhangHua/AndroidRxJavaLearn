@@ -22,16 +22,16 @@ public class Map {
                 .map(new Function<String , Object>() {
 
                     @Override
-                    public Object apply(String s) throws Exception {
-                        Log.e(DEMO_TAG , "Map is in main thread? "+ ThreadUtils.isInMainThread());
+                    public Object apply(String s) {
+                        Log.d(DEMO_TAG , "[Map] Map is in main thread? "+ ThreadUtils.isInMainThread());
                         return new Object();
                     }
                 }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer() {
                     @Override
-                    public void accept(Object o) throws Exception {
-                        Log.e(DEMO_TAG , o.toString());
+                    public void accept(Object o) {
+                        Log.d(DEMO_TAG , o.toString());
                     }
                 });
     }

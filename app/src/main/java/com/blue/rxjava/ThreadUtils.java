@@ -8,4 +8,8 @@ public class ThreadUtils {
         return  Looper.myLooper() == Looper.getMainLooper();
     }
 
+    public static long getThreadId() {
+        return Thread.currentThread().getId();
+    }
+
 }

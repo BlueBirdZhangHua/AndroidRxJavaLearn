@@ -14,7 +14,7 @@ import static com.blue.rxjava.MainActivity.DEMO_TAG;
  */
 public class FlapMap {
 
-    public static void run(){
+    public static void run() {
         Student[] students = new Student[3];
         students[0] = new Student();
         students[1] = new Student();
@@ -23,27 +23,27 @@ public class FlapMap {
         Observable.fromArray(students)
                 .flatMap(new Function<Student, ObservableSource<Course>>() {
                     @Override
-                    public ObservableSource<Course> apply(Student student) throws Exception {
+                    public ObservableSource<Course> apply(Student student) {
                         return Observable.fromArray(student.courses);
                     }
                 })
                 .map(new Function<Course, String>() {
                     @Override
-                    public String apply(Course course) throws Exception {
+                    public String apply(Course course) {
                         return course.name;
                     }
                 })
                 .subscribe(new Consumer<String>() {
-            @Override
-            public void accept(String s) throws Exception {
-                Log.e(DEMO_TAG , "Consumer accept:"+s);
-            }
-        });
+                    @Override
+                    public void accept(String s) {
+                        Log.d(DEMO_TAG, "[FlapMap] Consumer accept:" + s);
+                    }
+                });
     }
 
 
-    private static class Student{
-        Course [] courses;
+    private static class Student {
+        Course[] courses;
 
         public Student() {
             courses = new Course[2];
@@ -52,7 +52,7 @@ public class FlapMap {
         }
     }
 
-    private static class Course{
+    private static class Course {
         String name;
 
         public Course(String name) {

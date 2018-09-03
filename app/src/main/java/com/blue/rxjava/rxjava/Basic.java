@@ -15,7 +15,7 @@ public class Basic {
     public static void run(){
         Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
-            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+            public void subscribe(ObservableEmitter<String> emitter) {
                 emitter.onNext("a");
                 emitter.onNext("b");
                 emitter.onNext("c");
@@ -31,7 +31,7 @@ public class Basic {
 
             @Override
             public void onNext(String s) {
-                Log.e(DEMO_TAG ,"Fully subscribe  "+s);
+                Log.d(DEMO_TAG ,"[Basic] Fully subscribe  "+s);
             }
 
             @Override
@@ -41,7 +41,7 @@ public class Basic {
 
             @Override
             public void onComplete() {
-                Log.e(DEMO_TAG ,"Fully subscribe onComplete");
+                Log.d(DEMO_TAG ,"[Basic] Fully subscribe onComplete");
             }
         });
 
@@ -55,7 +55,7 @@ public class Basic {
 
             @Override
             public void onNext(String s) {
-                Log.e(DEMO_TAG ,"Just   "+s);
+                Log.d(DEMO_TAG ,"[Basic] Just   "+s);
             }
 
             @Override
@@ -65,7 +65,7 @@ public class Basic {
 
             @Override
             public void onComplete() {
-                Log.e(DEMO_TAG ,"Just onComplete");
+                Log.d(DEMO_TAG ,"[Basic] Just onComplete");
             }
         });
 
@@ -79,7 +79,7 @@ public class Basic {
 
             @Override
             public void onNext(String s) {
-                Log.e(DEMO_TAG ,"fromArray "+s);
+                Log.d(DEMO_TAG ,"[Basic] fromArray "+s);
             }
 
             @Override
@@ -89,7 +89,7 @@ public class Basic {
 
             @Override
             public void onComplete() {
-                Log.e(DEMO_TAG ,"fromArray onComplete");
+                Log.d(DEMO_TAG ,"[Basic] fromArray onComplete");
             }
         });
 

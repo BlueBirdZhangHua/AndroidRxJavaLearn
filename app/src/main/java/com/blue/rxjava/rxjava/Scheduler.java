@@ -39,7 +39,7 @@ public class Scheduler {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                        Log.e(DEMO_TAG , "Consumer onNext "+s);
+                        Log.d(DEMO_TAG , "[Scheduler] Consumer onNext "+s);
                     }
                 });
     }
