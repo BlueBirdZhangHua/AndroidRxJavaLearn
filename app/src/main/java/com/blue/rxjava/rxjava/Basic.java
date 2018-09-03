@@ -8,6 +8,8 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
+import static com.blue.rxjava.MainActivity.DEMO_TAG;
+
 public class Basic {
 
     public static void run(){
@@ -29,7 +31,7 @@ public class Basic {
 
             @Override
             public void onNext(String s) {
-                Log.e("Demo" ,"Fully subscribe  "+s);
+                Log.e(DEMO_TAG ,"Fully subscribe  "+s);
             }
 
             @Override
@@ -39,7 +41,7 @@ public class Basic {
 
             @Override
             public void onComplete() {
-                Log.e("Demo" ,"Fully subscribe onComplete");
+                Log.e(DEMO_TAG ,"Fully subscribe onComplete");
             }
         });
 
@@ -53,7 +55,7 @@ public class Basic {
 
             @Override
             public void onNext(String s) {
-                Log.e("Demo" ,"Just   "+s);
+                Log.e(DEMO_TAG ,"Just   "+s);
             }
 
             @Override
@@ -63,7 +65,7 @@ public class Basic {
 
             @Override
             public void onComplete() {
-                Log.e("Demo" ,"Just onComplete");
+                Log.e(DEMO_TAG ,"Just onComplete");
             }
         });
 
@@ -77,7 +79,7 @@ public class Basic {
 
             @Override
             public void onNext(String s) {
-                Log.e("Demo" ,"fromArray "+s);
+                Log.e(DEMO_TAG ,"fromArray "+s);
             }
 
             @Override
@@ -87,7 +89,7 @@ public class Basic {
 
             @Override
             public void onComplete() {
-                Log.e("Demo" ,"fromArray onComplete");
+                Log.e(DEMO_TAG ,"fromArray onComplete");
             }
         });
 

@@ -11,6 +11,7 @@ import com.blue.rxjava.rxjava.Scheduler;
 
 
 public class MainActivity extends AppCompatActivity {
+    public static String DEMO_TAG = "Demo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

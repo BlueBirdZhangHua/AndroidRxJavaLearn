@@ -2,15 +2,16 @@ package com.blue.rxjava.rxjava.operator;
 
 import android.util.Log;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
+import static com.blue.rxjava.MainActivity.DEMO_TAG;
+
+/**
+ * This demo show how to use flatMap to process single item in array
+ */
 public class FlapMap {
 
     public static void run(){
@@ -18,29 +19,6 @@ public class FlapMap {
         students[0] = new Student();
         students[1] = new Student();
         students[2] = new Student();
-
-
-        Subscriber<String> subscriber = new Subscriber<String>() {
-            @Override
-            public void onSubscribe(Subscription s) {
-
-            }
-
-            @Override
-            public void onNext(String s) {
-                Log.e("Deo" , "FlapMap onNext: "+s);
-            }
-
-            @Override
-            public void onError(Throwable t) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        };
 
         Observable.fromArray(students)
                 .flatMap(new Function<Student, ObservableSource<Course>>() {
@@ -58,7 +36,7 @@ public class FlapMap {
                 .subscribe(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                Log.e("Demo" , "Consumer accept:"+s);
+                Log.e(DEMO_TAG , "Consumer accept:"+s);
             }
         });
     }

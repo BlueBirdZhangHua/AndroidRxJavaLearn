@@ -8,6 +8,8 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 
+import static com.blue.rxjava.MainActivity.DEMO_TAG;
+
 public class Consumers {
 
     public static void run(){
@@ -27,7 +29,7 @@ public class Consumers {
 
             @Override
             public void accept(String s) throws Exception {
-                Log.e("Demo" , "Consumer onNext "+s);
+                Log.e(DEMO_TAG , "Consumer onNext "+s);
             }
         };
 
@@ -35,14 +37,14 @@ public class Consumers {
 
             @Override
             public void accept(Throwable throwable) throws Exception {
-                Log.e("Demo" , "Consumer onError "+throwable.getMessage());
+                Log.e(DEMO_TAG , "Consumer onError "+throwable.getMessage());
             }
         };
 
         Action onCompletedAction = new Action() {
             @Override
             public void run() throws Exception {
-                Log.e("Demo" , "Action onComplete ");
+                Log.e(DEMO_TAG , "Action onComplete ");
             }
 
         };
