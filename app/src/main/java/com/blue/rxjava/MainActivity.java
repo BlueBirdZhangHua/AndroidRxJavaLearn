@@ -10,6 +10,7 @@ import com.blue.rxjava.rxjava.operator.FlapMap;
 import com.blue.rxjava.rxjava.operator.Map;
 import com.blue.rxjava.rxjava.Scheduler;
 import com.blue.rxjava.rxjava.operator.MapWithScheduler;
+import com.blue.rxjava.rxjava.operator.Zip;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Scheduler.run();
         Map.run();
         FlapMap.run();
+        Zip.run();
         MapWithScheduler.run();
         Concat.run();
     }

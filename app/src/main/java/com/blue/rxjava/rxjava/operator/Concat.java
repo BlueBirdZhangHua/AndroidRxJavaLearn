@@ -22,7 +22,7 @@ public class Concat {
         Observable<String> stepOne = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                Log.d(DEMO_TAG , "[Concat] stepOne call onComplete");
+                Log.d(DEMO_TAG, "[Concat] stepOne call onComplete");
                 emitter.onComplete();
             }
         });
@@ -30,7 +30,7 @@ public class Concat {
         Observable stepTwo = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                Log.d(DEMO_TAG , "[Concat] stepTwo call onNext");
+                Log.d(DEMO_TAG, "[Concat] stepTwo call onNext");
                 emitter.onNext("[Concat] stepTwo bean called");
             }
         });
@@ -38,19 +38,18 @@ public class Concat {
         Observable stepThree = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                Log.d(DEMO_TAG , "[Concat] stepThree bean called");
+                Log.d(DEMO_TAG, "[Concat] stepThree bean called");
                 emitter.onComplete();
             }
         });
 
-        Observable.concat(stepOne , stepTwo , stepThree)
+        Observable.concat(stepOne, stepTwo, stepThree)
                 .subscribe(new Consumer() {
                     @Override
                     public void accept(Object o) throws Exception {
-                        Log.d(DEMO_TAG , "[Concat] concat step bean called");
+                        Log.d(DEMO_TAG, "[Concat] concat step bean called");
                     }
                 });
-
 
     }
 
