@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.blue.rxjava.rxjava.Basic;
 import com.blue.rxjava.rxjava.Consumers;
+import com.blue.rxjava.rxjava.operator.Concat;
 import com.blue.rxjava.rxjava.operator.FlapMap;
 import com.blue.rxjava.rxjava.operator.Map;
 import com.blue.rxjava.rxjava.Scheduler;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Map.run();
         FlapMap.run();
         MapWithScheduler.run();
+        Concat.run();
     }
 
 }
